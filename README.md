@@ -36,6 +36,8 @@ This project combines multiple datasets:
   - Milliquas catalog (quasar/AGN sample)
 - **Features and light curves** from the ALeRCE database (ZTF survey)
 
+> ⚠️ Note: The Milliquas catalog files (`milliquas.fits`, `milliquas.txt`) are not included in this repository due to GitHub file size limits. The notebook expects these files to be available locally.
+
 ---
 
 ## Feature Extraction
@@ -46,7 +48,7 @@ Two types of features are used:
 - Color features (e.g., g − r)
 - Variability amplitude and standard deviation
 - Rise and decay times
-- TDE-specific model fits (e.g., TDE_decay, fleet_*)
+- TDE-specific model fits (e.g., `TDE_decay`, `fleet_*`)
 - Host-galaxy offset metrics
 
 ### 2. Early-Time Features
@@ -111,37 +113,39 @@ This suggests that **meaningful classification is possible within ~2 weeks of de
 ---
 
 ## Repository Structure
-│── final_project.ipynb # Main analysis notebook
-├── milliquas.fits # AGN catalog
-└── README.md
+Final_Project_Notebook.ipynb # Main analysis notebook
+README.md # Project description
 
 ---
 
 ## How to Run
 
 1. Install required packages:
+
 ```bash
 pip install numpy pandas matplotlib scikit-learn astropy alerce
-Open the notebook:
-jupyter notebook notebooks/final_project.ipynb
-Run all cells to:
+
+2. Open the notebook:
+jupyter notebook Final_Project_Notebook.ipynb
+
+3. Run all cells to:
 build datasets
 extract features
 train models
 generate plots
-Limitations
+
+## Limitations
 Small sample size
 Missing feature values (handled via imputation)
 Differences between AGN datasets (TNS vs Milliquas)
 Early-time features are noisy and incomplete
-Future Work
+
+## Future Work
 Expand dataset size
 Incorporate time-series modeling techniques
-Explore deep learning methods (e.g., RNNs)
 Apply to real-time classification pipelines
 
-
-Author
+## Author
 Rebecca Knoops
 B.S. Astronomy & Astrophysics
 University of Michigan (2026)
